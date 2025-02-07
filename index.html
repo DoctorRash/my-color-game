@@ -109,6 +109,12 @@
             generateColorOptions();
         }
 
+        function resetGame() {
+            score = 0; // Reset score only when the new game button is pressed
+            document.getElementById("score").textContent = score;
+            startNewGame();
+        }
+
         function generateColorOptions() {
             const optionsContainer = document.getElementById("options");
             optionsContainer.innerHTML = "";
@@ -135,7 +141,7 @@
             setTimeout(startNewGame, 1000);
         }
 
-        document.getElementById("newGameButton").addEventListener("click", startNewGame);
+        document.getElementById("newGameButton").addEventListener("click", resetGame);
 
         startNewGame();
     </script>
